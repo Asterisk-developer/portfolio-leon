@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "leon_portfolio": {
+    "portfolio-leon": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -36,8 +36,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "1MB",
+                  "maximumError": "5MB"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -59,10 +59,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "leon_portfolio:build:production"
+              "buildTarget": "portfolio-leon:build:production"
             },
             "development": {
-              "buildTarget": "leon_portfolio:build:development"
+              "buildTarget": "portfolio-leon:build:development"
             }
           },
           "defaultConfiguration": "development"

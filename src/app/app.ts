@@ -9,5 +9,5 @@ import { HomePage } from '../home/home-page';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('leon_portfolio');
+  protected readonly title = signal('portfolio-leon');
 }
