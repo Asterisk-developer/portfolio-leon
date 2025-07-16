@@ -1,0 +1,33 @@
+::ng-deep {
+  .mat-toolbar.mat-toolbar-single-row {
+    background-color: #e5e8ed;
+  }
+}
+.name-header {
+  font-size: 40px;
+  font-family: serif;
+  cursor: pointer;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  // padding: 1rem;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.underline-on-hover {
+  position: relative;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.underline-on-hover:hover {
+  border-bottom: 2px solid #e63946; /* Or your primary color */
+}
