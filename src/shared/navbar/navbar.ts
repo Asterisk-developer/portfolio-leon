@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { materialImports } from '../material';
 import { CommonModule } from '@angular/common';
@@ -11,14 +11,15 @@ import { CommonModule } from '@angular/common';
 })
 export class Navbar implements OnInit {
   constructor(private router: Router) { }
+  isSmallScreen = false;
   pageTitle = 'Leon';
   name = 'Leon'
   role = 'Frontend Developer | Angular & React';
   navtab = [
-    { linkText: 'Home', url: '', tooltip: 'Home', action: () => this.goToHome() },
-    { linkText: 'Experience', url: '', tooltip: 'Experience', action: () => this.goToExperience() },
-    { linkText: 'Projects', url: '', tooltip: 'Projects', action: () => this.goToProjects() },
-    { linkText: 'About', url: '', tooltip: 'About', action: () => this.goToExperience() },
+    { linkText: 'Home', url: '', icon: 'home',title:'' },
+    { linkText: 'Experience', url: 'experience', icon: 'work',title:'Experience'},
+    { linkText: 'Projects', url: 'projects', icon: 'library_books',title:'Projects'},
+    { linkText: 'About', url: 'about', icon: 'person',title:'About' },
   ];
 
   ngOnInit(): void {
@@ -27,20 +28,17 @@ export class Navbar implements OnInit {
       const state = navigation?.extras.state;
       this.pageTitle = state?.pageTitle ? state?.pageTitle : 'Leon';
     })
+    this.checkScreen();
   }
-  goToExperience(): void {
-    this.router.navigate(['/experience'], {
-      state: { pageTitle: 'Experience' }
-    })
+
+  @HostListener('window:resize')
+  checkScreen() {
+    this.isSmallScreen = window.innerWidth < 768;
   }
-  goToHome(): void {
-    this.router.navigate([''], {
-      state: { pageTitle: 'Leon' }
-    })
-  }
-  goToProjects(): void {
-    this.router.navigate(['/projects'], {
-      state: { pageTitle: 'Projects' }
+
+  navigateToPage(url:string,title:string): void {
+    this.router.navigate([`/${url}`], {
+      state: { pageTitle: title }
     })
   }
 }

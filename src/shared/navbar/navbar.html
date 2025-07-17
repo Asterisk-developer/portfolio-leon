@@ -1,9 +1,23 @@
 <div class="navbar">
     <mat-toolbar>
-        <span class="name-header" (click)="goToHome()">{{ pageTitle }}</span>
+        <span class="name-header">{{ pageTitle }}</span>
         <span class="name-header red-font">.</span>
-        <span class="spacer"></span>        
-        <button *ngFor="let link of navtab" mat-button class="mat-raised-button underline-on-hover" matTooltip="{{ link.linkText }}"
-            (click)="link.action()">{{ link.linkText }}</button>        
+        <span class="spacer"></span>
+        @if(!isSmallScreen){
+        <button *ngFor="let link of navtab" mat-button class="mat-raised-button underline-on-hover"
+            matTooltip="{{ link.linkText }}" (click)="navigateToPage(link.url,link.title)">{{ link.linkText
+            }}</button>
+        }
+        @if(isSmallScreen){
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+        }
     </mat-toolbar>
 </div>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item *ngFor="let link of navtab" (click)="navigateToPage(link.url,link.title)">
+        <mat-icon>{{link.icon}}</mat-icon>
+        <span>{{ link.linkText }}</span>
+    </button>
+</mat-menu>

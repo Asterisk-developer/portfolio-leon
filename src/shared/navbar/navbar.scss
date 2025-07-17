@@ -1,12 +1,16 @@
 ::ng-deep {
   .mat-toolbar.mat-toolbar-single-row {
     background-color: #e5e8ed;
+    // padding-left: 0;
+  }
+  .mat-mdc-menu-content {
+    background-color: #e5e8ed;
   }
 }
 .name-header {
   font-size: 40px;
   font-family: serif;
-  cursor: pointer;
+  cursor: pointer;  
 }
 
 .spacer {
@@ -19,7 +23,7 @@
   background-color: white;
   // padding: 1rem;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);   
 }
 
 .underline-on-hover {
