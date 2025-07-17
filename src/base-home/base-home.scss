@@ -2,8 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   flex: 1 1 auto;
-  overflow-y: auto;
-  // background-color: b;
+  overflow-y: auto;  
+  position: relative;
+  z-index: 1;
+  color: white;  
 }
 
 .left-panel {
@@ -74,4 +76,24 @@
 
 .right-panel {
   width: 50%;
+}
+
+.video-wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-wrapper video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: brightness(0.6); /* optional: darkens video for text visibility */
 }
