@@ -1,22 +1,29 @@
 <div class="content">
-<img src="assets/cgi.png" alt="Logo" class="logo-icon" />
-<div class="project-content">
-<mat-card class="example-card">
-    <mat-card-header>        
-        <mat-card-title class="red-font">CGI TRADE360</mat-card-title>
-        <mat-card-subtitle>Angular JS to Angular Conversion</mat-card-subtitle>
-        <mat-card-subtitle>October 2023 - Present</mat-card-subtitle>        
-    </mat-card-header>
-    <img mat-card-image class="project-image" src="assets/trade360.png" alt="cgi">
-    <mat-card-content>
-        <p class="gray-font">
-            Played a key role as a core frontend developer in the AngularJS-to-Angular migration of CGI TRADE360,
-            markedly elevating performance, maintainability, and user experience. Owned critical modules by enforcing
-            high code quality through comprehensive testing, conducting code reviews, and upholding Angular best
-            practices.
-        </p>
-    </mat-card-content>
-</mat-card>
+    <div *ngFor="let link of companywiseProjectData">
+        <img [src]='link.logo' alt="Logo" class="logo-icon" />
+        <div class="project-content">
+            <mat-card *ngFor="let project of link.projects" [ngStyle]="{
+       'background-image': 'url(' + project.cardBackGround + ')',       
+       'color': project.fontColor
+     }" class="example-card">
+                <mat-card-header>
+                    <mat-card-title >{{project.projectName}}</mat-card-title>
+                    <mat-card-subtitle [ngStyle]="{'color': project.fontColor}">{{project.period}}</mat-card-subtitle>
+                    <mat-card-subtitle [ngStyle]="{'color': project.fontColor}">{{project.techStack}}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image class="project-image" [src]='project.projectImagePath' alt="cgi">
+                <mat-card-content>
+                    <p >
+                        {{project.description}}
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>  
+        <div class="h-divider">
+  <div class="shadow"></div>
+  </div>      
+    </div>
 </div>
-<img src="assets/tcs.png" alt="Logo" class="logo-icon" />
-</div>
+<!-- 'background-size': 'cover', -->
+       <!-- 'background-position': 'center', -->
+       'color': card.color

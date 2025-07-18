@@ -19,7 +19,7 @@ export class Navbar implements OnInit {
     { linkText: 'Home', url: '', icon: 'home',title:'' },
     { linkText: 'Experience', url: 'experience', icon: 'work',title:'Experience'},
     { linkText: 'Projects', url: 'projects', icon: 'library_books',title:'Projects'},
-    { linkText: 'About', url: 'about', icon: 'person',title:'About' },
+    // { linkText: 'About', url: 'about', icon: 'person',title:'About' },
   ];
 
   ngOnInit(): void {

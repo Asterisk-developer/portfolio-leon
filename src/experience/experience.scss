@@ -3,27 +3,39 @@
         flex-grow: 2;
         display: flex;
         justify-content: space-between;
+        color: white !important;
     }
 
     .mat-expansion-panel-header {
         height: min-content !important;
         min-height: 3rem;
+        color: white !important;
     }
 
     .mat-expansion-panel {
-        background-color: #78797c;
+        background-color: gray !important;
+    }
+
+    .mat-expansion-indicator::after {
+        color: white !important;
+    }
+
+    .link {
+        color: white !important;
     }
 }
 
 .content {
     height: 90vh;
     overflow-y: auto;
+    padding-bottom: 2rem;
+    background-color: black;
 }
 
 .experience-card {
-    max-width: 900px;
     padding: 1rem;
-    background-color: #fafafa;    
+    background-color: gray;
+    color: white;
 }
 
 .experience-list {
@@ -54,7 +66,8 @@
     display: flex;
     flex-direction: row;
     padding: 1rem;
-    background-color: #fafafa;
+    background-color: black;
+    color: #d5d5d5;
     // border: 2px solid #78797c;
     border-radius: 8px;
 }

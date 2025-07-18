@@ -21,5 +21,5 @@ export const materialImports = [
   MatDividerModule,  
   MatSidenavModule,
   MatListModule,
-  MatMenuModule
+  MatMenuModule,  
 ]
