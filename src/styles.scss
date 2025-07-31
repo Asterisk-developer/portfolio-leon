@@ -1,7 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
-@import "@angular/material/prebuilt-themes/indigo-pink.css";
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}/* You can add global styles to this file, and also import other style files */
+
+:root {
+  @include mat.button-overrides(
+    (      
+      filled-container-color: transparent,
+      outlined-outline-color: #e63946
+    )
+  );
+}
+
+:root {
+  @include mat.tabs-overrides((
+    active-focus-indicator-color: #e63946,
+    active-focus-label-text-color: #e63946,
+    active-indicator-color: #e63946,
+    divider-height: 3px,
+    active-indicator-height: 3px,
+    divider-color: gray
+  ));
+}
+
+app-experience {
+  @include mat.card-overrides((
+    subtitle-text-size: 12px,
+    title-text-size: 18px,
+    subtitle-text-color: white,
+  ));
+  
+  @include mat.icon-overrides((
+    color: #e63946,
+  ));
+
+}
+
+
 @font-face {
   font-family: 'header-font-winky-rough';
   src: url('./assets/WinkyRough-VariableFont_wght.ttf');
@@ -26,3 +73,5 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .link {
   cursor: pointer;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

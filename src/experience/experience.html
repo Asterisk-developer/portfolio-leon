@@ -13,25 +13,18 @@
             cross-browser compatibility and seamless integration with backend systems.
         </mat-card>
     </div>
+
     <div>
-        <mat-accordion>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <div class="expansion-header">
-                            <img src="assets/cgi.png" alt="Logo" class="logo-icon" />
-                            <mat-icon class="link" (click)="goToCompanyLink('https://www.cgi.com/en')">launch</mat-icon>
-                        </div>
-                    </mat-panel-title>
-                    <mat-panel-description>
-                        <div>Senior Software Engineer</div>
-                        <div>October 2023 - Present</div>
-                    </mat-panel-description>
-                </mat-expansion-panel-header>
+        <mat-tab-group animationDuration="1000ms" mat-stretch-tabs="false" mat-align-tabs="start">
+            <mat-tab label="Tab 1">
+                <ng-template mat-tab-label>
+                    <img src="assets/cgi.png" alt="Logo" class="logo-icon" />
+                </ng-template>
                 <mat-card class="experience-card">
-                    <mat-card-header>
-                        <mat-card-title>Frontend Developer – CGI TRADE360 Migration Project</mat-card-title>
-                        <mat-card-subtitle class="link">AngularJS to Angular Migration | Angular 12+</mat-card-subtitle>
+                    <mat-card-header class="experience-card-header">
+                        <mat-card-title>Senior System Engineer</mat-card-title>
+                        <mat-card-subtitle>AngularJS to Angular Migration | Angular 12+</mat-card-subtitle>
+                        <mat-card-subtitle>October 2023 - Present</mat-card-subtitle>
                     </mat-card-header>
                     <mat-divider></mat-divider>
                     <mat-card-content>
@@ -76,28 +69,22 @@
                                 foster team alignment.
                             </li>
                         </ul>
+                        <div class="link-section">
+                            <div class="link-item" matTooltip="www.cgi.com" (click)="goToCompanyLink('https://www.cgi.com/en')"><span class="link-text">Go to</span> <mat-icon class="icon">link</mat-icon></div>
+                            <div class="link-item" (click)="goToProjects()"><span class="link-text">See Projects</span> <mat-icon class="icon">arrow_forward</mat-icon></div>
+                        </div>
                     </mat-card-content>
                 </mat-card>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <div>
-                            <div class="expansion-header">
-                                <img src="assets/tcs.png" alt="Logo" class="logo-icon" />
-                                <mat-icon class="slight-padding-top link" (click)="goToCompanyLink('https://www.tcs.com/home-page')">launch</mat-icon>
-                            </div>
-                        </div>
-                    </mat-panel-title>
-                    <mat-panel-description>
-                        <div>Senior System Engineer</div>
-                        <div>January 2019 - October 2023</div>
-                    </mat-panel-description>
-                </mat-expansion-panel-header>
+            </mat-tab>
+            <mat-tab label="Tab 2">
+                <ng-template mat-tab-label>
+                    <img src="assets/tcs.png" alt="Logo" class="logo-icon" />
+                </ng-template>
                 <mat-card class="experience-card">
-                    <mat-card-header>
-                        <mat-card-title>Frontend Developer</mat-card-title>
+                    <mat-card-header class="experience-card-header">
+                        <mat-card-title>Senior System Engineer</mat-card-title>
                         <mat-card-subtitle class="link">Angular with BlockChain | Angular 7+</mat-card-subtitle>
+                        <mat-card-subtitle class="link">January 2019 - October 2023</mat-card-subtitle>
                     </mat-card-header>
                     <mat-divider></mat-divider>
                     <mat-card-content>
@@ -141,9 +128,13 @@
 
                             </li>
                         </ul>
+                        <div class="link-section">
+                            <div class="link-item" matTooltip="www.tcs.com" (click)="goToCompanyLink('https://www.tcs.com/home-page')"><span class="link-text">Go to</span> <mat-icon class="icon">link</mat-icon></div>
+                            <div class="link-item" (click)="goToProjects()"><span class="link-text">See Projects</span> <mat-icon class="icon">arrow_forward</mat-icon></div>
+                        </div>
                     </mat-card-content>
                 </mat-card>
-            </mat-expansion-panel>
-        </mat-accordion>
+            </mat-tab>
+        </mat-tab-group>
     </div>
 </div>

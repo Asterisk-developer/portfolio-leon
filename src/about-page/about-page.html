@@ -1,1 +1,65 @@
-Under Work. 
+<div>
+    <div class="top-section">
+        <div>
+            <div class="profile-pic-container">
+                <img src="assets/profile.png" alt="Profile Picture" class="profile-pic" />
+            </div>
+            <div class="white-font name-intro">
+                <h1 class="name">Leon Jose</h1>
+                <span class="intro">"Design isn’t just how it looks. It’s how it works." – Steve Jobs</span>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-section">
+        <div class="column">
+            <h2>Who I Am / What I Do </h2>
+            <span class="display-text short-about">
+                Results-driven UI Developer with over 6 years of experience delivering scalable, high-performance web
+                applications across insurance, banking, and IoT domains. Specialized in Angular and React, with a strong
+                focus on component-based architecture, test-driven development, and building seamless user experiences
+                in fast-paced Agile environments.</span>
+            <span class="display-text short-about">Years of experience : &nbsp; <b
+                    class="rose-gold">{{yearsOfExperience}}</b></span>
+            <span class="display-text short-about">Domains worked : &nbsp; <b class="rose-gold">Insurance, Banking,
+                    IoT</b></span>
+        </div>
+        <div class="column">
+            <h2>Awards or Interests</h2>
+            <div class="awards-section">
+                <img src="assets/cgi.png" alt="Logo" class="logo-icon display-text" />
+                <span class="display-text short-about">2 x bronze award ( Q2 2024 , Q2 2025 )</span>
+                <span class="display-text short-about">Many applauds for the different works on the projects</span>
+                <img src="assets/tcs.png" alt="Logo" class="logo-icon display-text" />
+                <span class="display-text short-about">Best team appreciation for different projects.</span>
+            </div>
+
+            <mat-divider></mat-divider>
+            <div class="interests-section">
+                <span class="display-text short-about">- Designing clean, intuitive user interfaces.</span>
+                <span class="display-text short-about">- Staying current with frontend trends & frameworks.</span>
+                <span class="display-text short-about">- Solving UI puzzles and accessibility challenges.</span>
+            </div>
+        </div>
+        <div class="column">
+            <h2>Contact & Social</h2>
+            <span class="display-text short-about "><mat-icon class="icon">
+                    location_on</mat-icon>Location - Bangalore,
+                India</span>
+            <span class="display-text short-about"><mat-icon class="icon"> phone</mat-icon>Phone - +91
+                8089217530</span>
+            <div (click)="goToLink('mailto:lee.jose2011@gmail.com')" class="display-text short-about"><mat-icon
+                    class="icon"> email</mat-icon> <span class="link">Email - lee.jose2011&#64;gmail.com</span> </div>
+            <div (click)="downloadResume()" class="display-text short-about"><mat-icon
+                    class="icon">picture_as_pdf</mat-icon> <span class="link">Resume</span> </div>
+            <div class="social-container">
+                <div (click)="goToLink('https://github.com/Asterisk-developer')" class="display-text short-about link">
+                    <img src="assets/github.png" alt="Logo" class="img-icon display-text" />&nbsp;Github</div>
+                <div (click)="goToLink('https://www.linkedin.com/in/leon-jose-ba18551b4/')"
+                    class="display-text short-about link"><img src="assets/linkedin.png" alt="Logo"
+                        class="img-icon display-text" />&nbsp;LinkedIn</div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

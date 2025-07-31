@@ -1,11 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { materialImports } from '../shared/material';
 
 @Component({
   selector: 'app-about-page',
-  imports: [],
+  imports: [materialImports],
   templateUrl: './about-page.html',
   styleUrl: './about-page.scss'
 })
-export class AboutPage {
+export class AboutPage implements OnInit {
+  yearsOfExperience = `6+ Years`
+  isSmallScreen = false;
+  ngOnInit(): void {
 
+    this.checkScreen();
+  }
+  @HostListener('window:resize')
+  checkScreen() {
+    this.isSmallScreen = window.innerWidth < 768;
+  }
+
+  goToLink(url: string) {
+    window.open(url, '_blank'); // Opens in new tab
+  }
+
+  downloadResume(): void {
+    const link = document.createElement('a');
+    link.href = 'assets/resume_leon.pdf'; // make sure the file exists in assets/
+    link.download = 'resume_leon.pdf';
+    link.click();
+  }
 }
