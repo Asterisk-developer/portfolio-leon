@@ -1,81 +1,31 @@
 .container {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   flex: 1 1 auto;
-  overflow-y: auto;  
+  overflow-y: auto;
   position: relative;
   z-index: 1;
-  color: white;  
+  color: white;
 }
 
 .left-panel {
-  width: 50%;
+  width: 100%;
   display: flex;
   padding-top: 3rem;
 
   .left-panel-content {
     display: flex;
-    flex-direction: column;
-    /* Stack vertically */
-    gap: 2rem;
-    /* Space between boxes */
+    flex-direction: column;    
     padding: 1rem;
   }
 }
 
-.box {
-  padding: 1.5rem;
-  // font-size: clamp(16px, 2vw, 24px);
-}
-
-.intro {
-  font-size: 64px;
-}
-
-.sub-intro {
-  font-size: 54px;
-}
-
-@media (max-width: 1024px) {
-  .intro {
-    font-size: 48px;
-  }
-
-  .sub-intro {
-    font-size: 38px;
-  }
-}
-
-@media (max-width: 768px) {
-  .intro {
-    font-size: 36px;
-  }
-
-  .sub-intro {
-    font-size: 26px;
-  }
-}
-
-@media (max-width: 480px) {
-  .intro {
-    font-size: 28px;
-  }
-
-  .sub-intro {
-    font-size: 18px;
-  }
-}
-
-.padding-3 {
-  padding-top: 3rem;
-}
-
-.padding-left-1 {
-  padding-left: 1rem;
-}
-
 .right-panel {
   width: 50%;
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
 }
 
 .video-wrapper {
@@ -95,5 +45,6 @@
   z-index: 0;
   transform: translate(-50%, -50%);
   object-fit: cover;
-  filter: brightness(0.6); /* optional: darkens video for text visibility */
+  filter: brightness(0.6);
+  /* optional: darkens video for text visibility */
 }

@@ -24,9 +24,6 @@ export class AboutPage implements OnInit {
   }
 
   downloadResume(): void {
-    const link = document.createElement('a');
-    link.href = 'assets/resume_leon.pdf'; // make sure the file exists in assets/
-    link.download = 'resume_leon.pdf';
-    link.click();
+    window.open('assets/resume_leon.pdf', '_blank');
   }
 }

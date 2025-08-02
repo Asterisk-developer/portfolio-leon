@@ -3,11 +3,13 @@ import { Experience } from '../experience/experience';
 import { BaseHome } from '../base-home/base-home';
 import { Projects } from '../projects/projects';
 import { AboutPage } from '../about-page/about-page';
+import { Skills } from '../skills/skills';
 
 export const routes: Routes = [
     { path: '', component: BaseHome },
     { path: 'experience', component: Experience },
     { path: 'projects', component: Projects },
     { path: 'about', component: AboutPage },
+    { path: 'skills', component: Skills },
     { path: '**', redirectTo: '' }
 ];

@@ -1,6 +1,6 @@
 <div class="content">
-    <div *ngFor="let link of companywiseProjectData">
-        <img [src]='link.logo' alt="Logo" class="logo-icon" />
+    <div *ngFor="let link of companywiseProjectData" >
+        <img [src]='link.logo' alt="Logo" class="logo-icon" id="{{link.id}}" />
         <div class="project-content">
             <mat-card *ngFor="let project of link.projects" [ngStyle]="{
        'background-image': 'url(' + project.cardBackGround + ')',       
@@ -24,6 +24,3 @@
   </div>      
     </div>
 </div>
-<!-- 'background-size': 'cover', -->
-       <!-- 'background-position': 'center', -->
-       'color': card.color

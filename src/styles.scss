@@ -1,77 +1,105 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 
+$primary-red: #e63946;
+$gray: #78797c;
+$slight-gray: #dcdee8;
+$white: white;
+$black: black;
+
 html {
-  @include mat.theme((
-    color: (
-      theme-type: light,
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
-}/* You can add global styles to this file, and also import other style files */
+  @include mat.theme((color: (theme-type: light,
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    ));
+}
+
+/* You can add global styles to this file, and also import other style files */
 
 :root {
-  @include mat.button-overrides(
-    (      
-      filled-container-color: transparent,
-      outlined-outline-color: #e63946
-    )
-  );
+  @include mat.button-overrides((filled-container-color: transparent,
+      outlined-outline-color: $primary-red));
 }
 
 :root {
-  @include mat.tabs-overrides((
-    active-focus-indicator-color: #e63946,
-    active-focus-label-text-color: #e63946,
-    active-indicator-color: #e63946,
-    divider-height: 3px,
-    active-indicator-height: 3px,
-    divider-color: gray
-  ));
+  @include mat.tabs-overrides((active-focus-indicator-color: $primary-red,
+      active-focus-label-text-color: $primary-red,
+      active-indicator-color: $primary-red,
+      divider-height: 3px,
+      active-indicator-height: 3px,
+      divider-color: $gray));
 }
 
 app-experience {
-  @include mat.card-overrides((
-    subtitle-text-size: 12px,
-    title-text-size: 18px,
-    subtitle-text-color: white,
-  ));
-  
-  @include mat.icon-overrides((
-    color: #e63946,
-  ));
+  @include mat.card-overrides((subtitle-text-color: $white,
+    ));
+
+  @include mat.icon-overrides((color: $primary-red,
+    ));
 
 }
 
-
-@font-face {
-  font-family: 'header-font-winky-rough';
-  src: url('./assets/WinkyRough-VariableFont_wght.ttf');
+:root {
+  @include mat.menu-overrides((container-color: $slight-gray,
+      item-label-text-color: $black,
+      item-icon-color: $black,
+    ));
 }
 
 .red-font {
-  color: #e63946;
+  color: $primary-red;
 }
 
 .gray-font {
-  color: #78797c;
+  color: $gray;
 }
 
 .slight-gray-font {
-  color:#dcdee8
+  color: $slight-gray;
 }
 
 .white-font {
-  color: white;
+  color: $white;
 }
 
 .link {
   cursor: pointer;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.link:hover {
+  text-decoration: underline;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.heading {
+  font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
+  font-weight: 700;
+}
+
+.sub-heading {
+  font-size: clamp(1.25rem, 1.5vw + 0.5rem, 2rem);
+  font-weight: 600;
+}
+
+.sub-heading-2 {
+  font-size: clamp(1rem, 1.2vw + 0.3rem, 1.5rem);
+  font-weight: 500;
+}
+
+.body-text {
+  font-size: clamp(0.875rem, 1vw + 0.25rem, 1rem);
+  font-weight: 400;
+}

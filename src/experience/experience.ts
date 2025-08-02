@@ -15,9 +15,14 @@ export class Experience {
     window.open(url, '_blank'); // Opens in new tab
   }
 
-  goToProjects(): void {
+  goToProjects(projectId: string): void {
     this.router.navigate([`/projects`], {
-      state: { pageTitle: 'Projects' }
+      state: {
+        pageTitle: 'Projects',
+        showBreadCrumb: true,
+        goBackLink: 'experience',
+        projectsFor: projectId
+      }
     })
   }
 

@@ -1,12 +1,27 @@
 <div class="navbar">
     <mat-toolbar>
-        <span class="name-header white-font">{{ pageTitle }}</span>
-        <span class="name-header red-font">.</span>
+        @if(!showBreadCrumb) {
+        <span class="sub-heading white-font">{{ pageTitle }}</span>
+        }
+        @else {
+        <div class="link bread-crumb" (click)="navigateToPage(breadCrumbUrl)"><mat-icon
+                class="sub-heading red-font go-back-icon">keyboard_backspace</mat-icon>
+            <span class="sub-heading white-font link">{{ pageTitle }}</span>
+        </div>
+
+        }
+        <span class="sub-heading red-font">.</span>
         <span class="spacer"></span>
         @if(!isSmallScreen){
-        <button *ngFor="let link of navtab" matButton="filled" class="underline-on-hover"
-            matTooltip="{{ link.linkText }}" (click)="navigateToPage(link.url,link.title)">{{ link.linkText
-            }}</button>
+        <div *ngFor="let link of navtab">
+            @if(link.visible){
+            <button matButton="filled" class="underline-on-hover sub-heading" matTooltip="{{ link.linkText }}"
+                (click)="navigateToPage(link.url)">{{ link.linkText
+                }}</button>
+            }
+
+        </div>
+
         }
         @if(isSmallScreen){
         <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -16,8 +31,12 @@
     </mat-toolbar>
 </div>
 <mat-menu #menu="matMenu">
-    <button mat-menu-item *ngFor="let link of navtab" (click)="navigateToPage(link.url,link.title)">
-        <mat-icon>{{link.icon}}</mat-icon>
-        <span>{{ link.linkText }}</span>
-    </button>
+    <div *ngFor="let link of navtab">
+        @if(link.visible){
+        <button mat-menu-item (click)="navigateToPage(link.url)">
+            <mat-icon>{{link.icon}}</mat-icon>
+            <span>{{ link.linkText }}</span>
+        </button>
+        }
+    </div>
 </mat-menu>

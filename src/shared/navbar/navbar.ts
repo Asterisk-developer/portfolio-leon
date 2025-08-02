@@ -12,21 +12,31 @@ import { CommonModule } from '@angular/common';
 export class Navbar implements OnInit {
   constructor(private router: Router) { }
   isSmallScreen = false;
+  showBreadCrumb = false;
+  breadCrumbUrl = '';
   pageTitle = 'Leon';
   name = 'Leon'
   role = 'Frontend Developer | Angular & React';
   navtab = [
-    { linkText: 'Home', url: '', icon: 'home',title:'' },
-    { linkText: 'Experience', url: 'experience', icon: 'work',title:'Experience'},
-    { linkText: 'Projects', url: 'projects', icon: 'library_books',title:'Projects'},
-    { linkText: 'About Me', url: 'about', icon: 'person',title:'About' },
+    { linkText: 'Home', url: '', icon: 'home', title: '', visible: true },
+    { linkText: 'Experience', url: 'experience', icon: 'work', title: 'Experience', visible: true },
+    { linkText: 'Projects', url: 'projects', icon: 'library_books', title: 'Projects', visible: false },
+    { linkText: 'Skills', url: 'skills', icon: 'person', title: 'Skills', visible: false },
+    { linkText: 'About Me', url: 'about', icon: 'person', title: 'About', visible: true }, 
   ];
 
   ngOnInit(): void {
     this.router.events.subscribe(value => {
       const navigation: any = this.router.getCurrentNavigation();
       const state = navigation?.extras.state;
-      this.pageTitle = state?.pageTitle ? state?.pageTitle : 'Leon';
+      if (!state?.showBreadCrumb) {
+        this.pageTitle = state?.pageTitle ? state?.pageTitle : 'Leon';
+        this.showBreadCrumb = false;
+      } else {
+        this.pageTitle = state?.pageTitle ? state?.pageTitle : '';
+        this.showBreadCrumb = true;
+        this.breadCrumbUrl = state?.goBackLink;
+      }
     })
     this.checkScreen();
   }
@@ -36,9 +46,14 @@ export class Navbar implements OnInit {
     this.isSmallScreen = window.innerWidth < 768;
   }
 
-  navigateToPage(url:string,title:string): void {
+  navigateToPage(url: string): void {
     this.router.navigate([`/${url}`], {
-      state: { pageTitle: title }
+      state: { pageTitle: this.getTitleByUrl(url) }
     })
+  }
+
+  getTitleByUrl(url: string): string | undefined {
+    const found = this.navtab.find(page => page.url === url);
+    return found?.title;
   }
 }
