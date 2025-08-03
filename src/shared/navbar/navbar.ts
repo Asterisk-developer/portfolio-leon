@@ -21,7 +21,7 @@ export class Navbar implements OnInit {
     { linkText: 'Home', url: '', icon: 'home', title: '', visible: true },
     { linkText: 'Experience', url: 'experience', icon: 'work', title: 'Experience', visible: true },
     { linkText: 'Projects', url: 'projects', icon: 'library_books', title: 'Projects', visible: false },
-    { linkText: 'Skills', url: 'skills', icon: 'person', title: 'Skills', visible: false },
+    { linkText: 'Skills', url: 'skills', icon: 'person', title: 'Skills', visible: true },
     { linkText: 'About Me', url: 'about', icon: 'person', title: 'About', visible: true }, 
   ];
 

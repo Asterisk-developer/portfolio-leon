@@ -1,10 +1,16 @@
-<div>
-    <mat-slider min="0" max="100000" step="1000" showTickMarks discrete [displayWith]="formatLabel">
-  <input matSliderThumb>
-</mat-slider>
-</div>
-<div>
-    <mat-slider min="0" max="100000" step="1000" showTickMarks discrete [displayWith]="formatLabel">
-  <input matSliderThumb value="3000">
-</mat-slider>
+<div class="main-container">
+  <mat-card *ngFor="let skill of skillSets" class="skills-container">
+    <div>
+      <span class="white-font sub-heading">{{skill.type}}</span>
+    </div>
+    <mat-card-content>
+      <div *ngFor="let skillType of skill.skillsForType">
+        <div class="skill-type">
+          <img [src]='skillType.logoPath' alt="Logo" class="logo-icon" />
+          <div class="slight-gray-font sub-heading-2">{{skillType.skill}}</div>
+        </div>
+        <mat-progress-bar mode="determinate" [value]="skillType.level"></mat-progress-bar>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>

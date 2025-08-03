@@ -50,6 +50,21 @@ app-experience {
     ));
 }
 
+app-skills {
+  @include mat.progress-bar-overrides((
+    active-indicator-color: $primary-red,
+    track-color: $slight-gray,
+    active-indicator-height: 5px,
+    track-height: 7px,
+  ));
+
+   @include mat.card-overrides((
+    subtitle-text-color: $white,
+  //  filled-container-color: $slight-gray,
+   elevated-container-color: rgba(255, 255, 255, 0.2),
+    ));
+}
+
 .red-font {
   color: $primary-red;
 }

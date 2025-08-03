@@ -1,0 +1,39 @@
+// @import "../styles.scss";
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    column-gap: 3rem;
+    overflow-y: auto;
+    height: 85vh;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    width: 28%;
+    padding: 2rem;
+    border: 1px solid red;
+}
+
+.skill-type {
+    display: flex;
+    justify-content: end;
+    padding: 1rem 0 1rem 0
+}
+
+.skill-type {
+    display: flex;
+    justify-content: end;
+    padding: 1rem 0 1rem 0;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 30px;
+    object-fit: contain;
+    padding: 0 1rem 0 1rem;
+}
