@@ -35,8 +35,8 @@
 
 .overall-section {
     display: flex;
-    flex-direction: row;    
-    background-color: black;    
+    flex-direction: row;
+    background-color: black;
     border-radius: 8px;
 }
 
@@ -50,19 +50,25 @@
 
 .link-section {
     display: flex;
-    flex-direction: row;    
+    flex-direction: row;
     cursor: pointer;
-    
-    .link-item {
-        display: flex;
-        flex-direction: row;
-        padding: 1rem;        
-        .link-text {
-            padding: 2px 0 0 0;
-        }
-    }
-    .link-item:hover {
-        text-decoration: underline;
-    }
+}
 
+.link-item {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+
+}
+
+.link-item:hover {
+    text-decoration: underline;
+}
+
+.link-text {
+    padding: 2px 0 0 0;
+}
+
+.projects-link-section {
+    display: flex;
 }

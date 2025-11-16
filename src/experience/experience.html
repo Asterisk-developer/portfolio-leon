@@ -24,6 +24,10 @@
                     <mat-card-header class="experience-card-header">
                         <mat-card-title class="sub-heading">Senior System Engineer</mat-card-title>
                         <mat-card-subtitle class="sub-heading-2">October 2023 - Present</mat-card-subtitle>
+                        <div class="link-item projects-link-section" (click)="goToProjects('cgi')">
+                            <mat-icon class="icon">arrow_forward</mat-icon>
+                            <span class="link-text">See Projects</span>
+                        </div>
                     </mat-card-header>
                     <mat-divider></mat-divider>
                     <mat-card-content>
@@ -69,9 +73,7 @@
                             <div class="link-item" matTooltip="www.cgi.com"
                                 (click)="goToCompanyLink('https://www.cgi.com/en')"><span class="link-text">Go to</span>
                                 <mat-icon class="icon">link</mat-icon>
-                            </div>
-                            <div class="link-item" (click)="goToProjects('cgi')"><span class="link-text">See
-                                    Projects</span> <mat-icon class="icon">arrow_forward</mat-icon></div>
+                            </div>  
                         </div>
                     </mat-card-content>
                 </mat-card>
@@ -84,6 +86,10 @@
                     <mat-card-header class="experience-card-header">
                         <mat-card-title class="sub-heading">Senior System Engineer</mat-card-title>
                         <mat-card-subtitle class="sub-heading-2">January 2019 - October 2023</mat-card-subtitle>
+                        <div class="link-item projects-link-section" (click)="goToProjects('tcs')">
+                            <mat-icon class="icon">arrow_forward</mat-icon>
+                            <span class="link-text">See Projects</span>
+                        </div>
                     </mat-card-header>
                     <mat-divider></mat-divider>
                     <mat-card-content>
@@ -131,8 +137,6 @@
                             <div class="link-item" matTooltip="www.tcs.com"
                                 (click)="goToCompanyLink('https://www.tcs.com/home-page')"><span class="link-text">Go
                                     to</span> <mat-icon class="icon">link</mat-icon></div>
-                            <div class="link-item" (click)="goToProjects('tcs')"><span class="link-text">See
-                                    Projects</span> <mat-icon class="icon">arrow_forward</mat-icon></div>
                         </div>
                     </mat-card-content>
                 </mat-card>
